@@ -1,0 +1,119 @@
+/*****************************************************************************
+  ResponsiveDrill
+******************************************************************************/
+
+
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+
+// target ÷ context = result
+// 78px (h1 size) ÷ 24px (base font size) = 3.25em
+// 15 (padding) ÷ 24px = 0.625em
+// article target: 320px ÷ 960px (full page size) = 33.33%
+
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+
+//setting base font size
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+.news {
+    float: left;
+    width: 100%;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+    
+    
+    html {
+        font-size: 1em;
+    }
+    
+    h1 {
+        color: #fda9a9;
+        font-style: italic;
+    }
+    
+    .news {
+        width: 50%;
+        padding: 3em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 1.3em;
+    }
+    body {
+        @include background-image(url("/images/stonetown.JPG"));
+            background-position:center ;
+background-repeat: no-repeat, repeat-x;
+    }
+    
+    .news {
+        width: 20%;
+        padding: 1em;
+    }
+    
+    .news:nth-child(odd) {
+        background-color: #a8a8a8;
+    }
+}
+
+//if you set something in the 500 min width section and didn't override in 100px version, then it would still apply.
+
+@media screen and (min-width: 1000px) {
+    html{
+        font-size: 1.2em;
+    }
+    
+    body {
+        background-image: none;
+    }
+    
+    h1{
+        color: teal;
+        text-decoration: underline;
+        font-style: normal;
+        font-size: em(64);
+    }
+    .news {
+        width: 33.3333%;
+    }
+    .hero {
+        display: block;
+    }
+}
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+
+.news {
+    border: 1px solid blue;
+    padding: 0.625em;
+}
+
+.hero {
+     display: none:   
+}
+
